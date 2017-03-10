@@ -6,7 +6,7 @@ from sklearn.datasets import *
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 
-
+%Left the same
 def display_digits():
     digits = load_digits()
     print(digits.DESCR)
@@ -19,6 +19,7 @@ def display_digits():
 
 
 def train_model():
+    %Copied from toolbox
     data = load_digits()
     num_trials = 10
     train_percentages = range(5, 95, 5)
@@ -31,7 +32,23 @@ def train_model():
     # For consistency with the previous example use
     # model = LogisticRegression(C=10**-10) for your learner
 
-    # TODO: your code here
+    # I created two loops. The outer one is used to fill the test_accuracies variable
+    # while the inner loop is used to change the percentage ratio between the test
+    # and training data. This was based off of code given in the Toolbox
+    for percentage in train_percentages:
+        x = percentage
+        total = 0
+        for i in range(10):
+            X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, train_size= x)
+            model = LogisticRegression(C=21**-10)
+            model.fit(X_train, y_train)
+        #    print("Train accuracy %f" %model.score(X_train, y_train))
+        #    print("Test accuracy %f"%model.score(X_test, y_test))
+            total =  total + model.score(X_test, y_test)
+        average = total/num_trials
+        run = int((percentage/5)-1)
+        test_accuracies[run] = average
+
 
     fig = plt.figure()
     plt.plot(train_percentages, test_accuracies)
@@ -42,5 +59,5 @@ def train_model():
 
 if __name__ == "__main__":
     # Feel free to comment/uncomment as needed
-    display_digits()
-    # train_model()
+    #display_digits()
+    train_model()

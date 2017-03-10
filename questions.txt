@@ -1,0 +1,7 @@
+1. The curve has an upwards trend. It had the pattern of having a steep postive slope that comes to a point and then make a sharp change in direction and slopes downwards. The highest point of accuracy (around 25%) is when the percentage used for data training is at 80%. The final point (x = 100) ends with a 19.5% accuracy rating which is roughly the same accuracy rating when only 30% of the data is used for training.
+
+2. I think the whole graph is noise? The data has very sharp turns and doesn't look very accurate to what I would have predicted the graph to look like. I supose between the percentages of 25% to 45% of data used for training there is a bit more varience the average slopes.
+
+3. I don't exactly know how to answer this question because the graphs I'm getting are "different" but I wouldn't say smoother. The graph I got for 100 trials seems a bit more smooth however still has a large amount varience. I don't think the number of trails really "smooths" out the curve.
+
+4. I changed C=x**-10 to show x = 1,5,10,15,20,15. The graph was the smoothest when x = 1 producing a useful graph that looked like the graph I predicted. The graph seemed to get less smooth with the increased numbers. I initially thought there was a pattern that depended on the ones digit, but upon further anazlyzation I don't think that anymore.
